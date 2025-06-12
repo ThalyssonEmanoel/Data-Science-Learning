@@ -7,12 +7,16 @@ This repository contains a Streamlit application for Titanic data analysis with 
 1. Make sure you have **Python 3** installed on your machine.
 2. Create a virtual environment:
    ```bash
-   python -m venv venv
+   python -m venv venv or python3 -m venv venvv
    ```
 3. Activate the virtual environment:
    - On Windows:
      ```bash
      venv\Scripts\activate
+     ```
+        - On linux:
+     ```bash
+     source venv/bin/activate
      ```
 4. Install the project dependencies:
    ```bash
@@ -49,3 +53,9 @@ This repository contains a Streamlit application for Titanic data analysis with 
 - Visualizes how missing data may affect the analysis.
 
 All visualizations are implemented using Plotly and the dashboard is fully interactive.
+
+
+
+
+
+isso tudo estava no meu git, só mudei pra usar nesse projeto
