@@ -1,51 +1,50 @@
 # Data-Science-Learning
 
-This repository contains a Streamlit application for Titanic data analysis with the following features:
+This repository contains a practical example of machine learning using Python and scikit-learn to predict student performance based on study data.
 
-## How to Run this Application
+## How to Run This Project
 
 1. Make sure you have **Python 3** installed on your machine.
 2. Create a virtual environment:
    ```bash
-   python -m venv venv
+   python3 -m venv venv
    ```
 3. Activate the virtual environment:
-   - On Windows:
-     ```bash
-     venv\Scripts\activate
-     ```
-4. Install the project dependencies:
    ```bash
-   pip install -r requirements.txt
+   source venv/bin/activate
    ```
-5. Run the Streamlit application:
+4. Install the required dependencies:
    ```bash
-   streamlit run main.py
+   pip install pandas scikit-learn seaborn
    ```
+5. Open and run the `main.ipynb` notebook in your preferred editor (VS Code, Jupyter Notebook, etc).
 
-## 1. Data Overview
+## 1. Dataset Overview
 
-- Displays the total number of passengers.
-- Shows the overall survival rate (% survived and % not survived).
-- Presents the amount and percentage of missing data in each column.
+- The dataset `student_performance.csv` includes:
+  - `horas_estudo`: Number of study hours.
+  - `nota_provas`: Exam scores.
+  - `presenca (%)`: Attendance percentage.
+  - `passou`: 1 if the student passed, 0 otherwise.
 
-## 2. Required Visual Analyses
+## 2. Analysis Workflow
 
-- Bar chart showing survival rate by sex.
-- Bar chart of age vs survival.
-- Bar chart of survival by ticket class (Pclass).
-- Bar chart combining two variables (e.g., sex + class).
+- Load the CSV file using pandas.
+- Select predictor variables (`horas_estudo`, `nota_provas`, `presenca (%)`) and the target variable (`passou`).
+- Split the data into training and test sets.
+- Train a Decision Tree Classifier.
+- Evaluate the model using accuracy and confusion matrix.
 
-## 3. Interactive Filters (Sidebar)
+## 3. Results
 
-- Allows filtering by:
-  - Sex (male/female)
-  - Class (1st, 2nd, 3rd)
-  - Survivors / non-survivors
+- The notebook displays:
+  - The accuracy of the trained model.
+  - The confusion matrix showing classification performance.
 
-## 4. Highlight Missing Data
+## 4. Visualization
 
-- Shows which columns have missing data and quantifies it.
-- Visualizes how missing data may affect the analysis.
+- The code can be easily extended to include visualizations and exploratory analysis using seaborn or matplotlib.
 
-All visualizations are implemented using Plotly and the dashboard is fully interactive.
+---
+
+Feel free to modify the notebook and experiment with other algorithms or analyses!
