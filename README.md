@@ -1,51 +1,55 @@
+
 # Data-Science-Learning
 
-This repository contains a Streamlit application for Titanic data analysis with the following features:
+> This repository contains examples of Machine Learning applications using FastAPI, Streamlit, and Jupyter Notebook, with the penguins dataset.
 
-## How to Run this Application
+## How to run the code in this project
 
-1. Make sure you have **Python 3** installed on your machine.
-2. Create a virtual environment:
+### 1. Environment setup
+
+1. Make sure you have **Python 3** installed.
+2. Create and activate a virtual environment:
    ```bash
    python -m venv venv
+   venv\Scripts\activate
    ```
-3. Activate the virtual environment:
-   - On Windows:
-     ```bash
-     venv\Scripts\activate
-     ```
-4. Install the project dependencies:
+3. Install the dependencies:
    ```bash
    pip install -r requirements.txt
    ```
-5. Run the Streamlit application:
+
+### 2. Training the model (optional)
+
+The `modelo.ipynb` notebook shows how to train the model and save the `model.pkl` and `encoder.pkl` files. Run the notebook if you want to retrain the model.
+
+### 3. Running the API (FastAPI)
+
+1. Start the API by running:
    ```bash
-   streamlit run main.py
+   uvicorn api:app --reload
    ```
+2. The API will be available at `http://127.0.0.1:8000`.
+3. You can test the `/predict` endpoint using Swagger at `http://127.0.0.1:8000/docs`.
 
-## 1. Data Overview
+### 4. Running the interface (Streamlit)
 
-- Displays the total number of passengers.
-- Shows the overall survival rate (% survived and % not survived).
-- Presents the amount and percentage of missing data in each column.
+1. Run the Streamlit app:
+   ```bash
+   streamlit run interface.py
+   ```
+2. Fill in the data in the sidebar and click "Predict species". The app will communicate with the API to return the predicted species.
 
-## 2. Required Visual Analyses
+### 5. Running the notebook
 
-- Bar chart showing survival rate by sex.
-- Bar chart of age vs survival.
-- Bar chart of survival by ticket class (Pclass).
-- Bar chart combining two variables (e.g., sex + class).
+Open the `modelo.ipynb` file in a Jupyter environment (VS Code, JupyterLab, etc.) to see the model training process.
 
-## 3. Interactive Filters (Sidebar)
+---
 
-- Allows filtering by:
-  - Sex (male/female)
-  - Class (1st, 2nd, 3rd)
-  - Survivors / non-survivors
+**Main files summary:**
+- `api.py`: FastAPI API for penguin species prediction.
+- `interface.py`: Streamlit web interface for interacting with the model.
+- `modelo.ipynb`: Model training notebook.
+- `model.pkl` and `encoder.pkl`: Saved model and encoder files.
 
-## 4. Highlight Missing Data
-
-- Shows which columns have missing data and quantifies it.
-- Visualizes how missing data may affect the analysis.
-
-All visualizations are implemented using Plotly and the dashboard is fully interactive.
+---
+If you have any questions, check the comments in the files or open an issue.
